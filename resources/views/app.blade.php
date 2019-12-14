@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+<head>
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-46040882-2"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'UA-46040882-2');
+    </script>
+
+    <!-- Yandex.Metrika counter -->
+    <script type="text/javascript" >
+        (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+            m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+        (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+
+        ym(53345398, "init", {
+            clickmap:false,
+            trackLinks:true,
+            accurateTrackBounce:true
+        });
+    </script>
+    <noscript><div><img src="https://mc.yandex.ru/watch/53345398" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+    <link rel="dns-prefetch" href="//fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
+    <!-- /Yandex.Metrika counter -->
+
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- CSRF Token -->
+    <meta name="csrf-token" content="{{ csrf_token() }}">
+    <title>{{ config('app.name', 'Laravel') }}</title>
+    <!-- Scripts -->
+    <script src="{{ asset('js/app.js') }}" defer></script>
+
+    <script src="{{ asset('js/main.js') }}" defer></script>
+    <script src="{{ asset('js/jquery-2.2.4.min.js') }}" defer></script>
+    <script src="{{ asset('js/jquery.magnific-popup.min.js') }}" defer></script>
+    <script src="{{ asset('js/superfish.min.js') }}" defer></script>
+    <script src="{{ asset('js/vendor/jquery-2.2.4.min.js') }}" defer></script>
+    <script src="{{ asset('js/popper.min.js') }}" defer></script>
+    <script src="{{ asset('js/vendor/bootstrap.min.js') }}" defer></script>
+    <script src="{{ asset('js/jquery-ui.js') }}" defer></script>
+    <script src="{{ asset('js/easing.min.js') }}" defer></script>
+    <script src="{{ asset('js/hoverIntent.js') }}" defer></script>
+    <script src="{{ asset('js/superfish.min.js') }}" defer></script>
+    <script src="{{ asset('js/jquery.ajaxchimp.min.js') }}" defer></script>
+    <script src="{{ asset('js/jquery.magnific-popup.min.js') }}" defer></script>
+    <script src="{{ asset('js/jquery.nice-select.min.js') }}" defer></script>
+    <script src="{{ asset('js/owl.carousel.min.js') }}" defer></script>
+    <script src="{{ asset('js/main.js') }}" defer></script>
+    <!-- Styles -->
+    <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,400,300,500,600,700" rel="stylesheet">
+    <!--
+    CSS
+    ============================================= -->
+    <link rel="stylesheet" href="{{ asset('css/linearicons.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/font-awesome.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/bootstrap.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/magnific-popup.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/jquery-ui.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/nice-select.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/animate.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/owl.carousel.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/main.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/app.css') }}">
+
+    @yield('head')
+</head>
+<body style="display: block;">
+
+<div id="app">
+    <app></app>
+</div>
+
+</body>
+</html>
