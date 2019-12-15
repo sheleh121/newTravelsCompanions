@@ -39,20 +39,17 @@
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
 
-    <script src="{{ asset('js/main.js') }}" defer></script>
     <script src="{{ asset('js/jquery-2.2.4.min.js') }}" defer></script>
     <script src="{{ asset('js/jquery.magnific-popup.min.js') }}" defer></script>
     <script src="{{ asset('js/superfish.min.js') }}" defer></script>
     <script src="{{ asset('js/vendor/jquery-2.2.4.min.js') }}" defer></script>
-    <script src="{{ asset('js/popper.min.js') }}" defer></script>
-    <script src="{{ asset('js/vendor/bootstrap.min.js') }}" defer></script>
+
     <script src="{{ asset('js/jquery-ui.js') }}" defer></script>
     <script src="{{ asset('js/easing.min.js') }}" defer></script>
     <script src="{{ asset('js/hoverIntent.js') }}" defer></script>
     <script src="{{ asset('js/superfish.min.js') }}" defer></script>
     <script src="{{ asset('js/jquery.ajaxchimp.min.js') }}" defer></script>
     <script src="{{ asset('js/jquery.magnific-popup.min.js') }}" defer></script>
-    <script src="{{ asset('js/jquery.nice-select.min.js') }}" defer></script>
     <script src="{{ asset('js/owl.carousel.min.js') }}" defer></script>
     <script src="{{ asset('js/main.js') }}" defer></script>
     <!-- Styles -->

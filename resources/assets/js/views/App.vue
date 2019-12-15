@@ -2,9 +2,6 @@
     <div>
 
         <header id="header">
-            <div class="header-top">
-
-            </div>
 
             <div class="container main-menu">
                 <div class="row align-items-center justify-content-between d-flex">
@@ -28,7 +25,7 @@
                             <li v-if="user == null" class="float-right" >
                                 <router-link to="/login">ВХОД</router-link>
                             </li>
-                            <li v-else class="float-right" >
+                            <li v-else >
                                 <router-link :to="{ name: 'user', params: { user_id: user.id  }}" >Моя страница</router-link>
                             </li>
                             <li v-if="authenticated && user" class="menu-has-children">
