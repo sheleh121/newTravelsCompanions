@@ -3,7 +3,6 @@ require('./bootstrap');
 
 import App from './views/App'
 import Auth from './auth.js';
-import vSelect from 'vue-select';
 import Echo from "laravel-echo"
 import VueRouter from 'vue-router';
 import router from './routes.js';
@@ -21,11 +20,10 @@ window.Echo = new Echo({
     host: window.location.hostname + ':6001',
     auth: {headers: {Authorization: "Bearer " + auth.token}}
 });
-Vue.use(VueRouter)
-Vue.use(VueAuthImage)
+Vue.use(VueRouter);
+Vue.use(VueAuthImage);
 window.Event = new Vue;
 
-Vue.component('v-select', vSelect);
 
 Vue.component('location-component', require('./components/LocationComponent.vue'));
 

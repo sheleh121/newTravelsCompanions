@@ -47,7 +47,7 @@
                         if (response.data.data.length > 0){
                             this.images_id = response.data;
                             this.display = true;
-                            this.image_big.id = response.data[0].id
+                            this.image_big.id = response.data.data[0].id
                         }
                     })
             },

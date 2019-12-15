@@ -7,26 +7,21 @@
                 <div class="row align-items-center justify-content-between d-flex">
                     <nav id="nav-menu-container">
                         <ul class="nav-menu">
-                                    <li v-if="user != null"  >
-                                        <router-link :to="{ name: 'messages' } " :style="$root.no_seen_messages > 0 ? 'color: #FF4F00' : '' ">СООБЩЕНИЯ</router-link>
-                                    </li>
-                                    <li v-if="user != null" >
-                                        <router-link :to="{ name: 'user_travels' } " >МОИ СОБЫТИЯ</router-link>
-                                    </li>
                                     <li >
                                         <router-link :to="{ name: 'travels' } "  >СОБЫТИЯ</router-link>
                                     </li>
                                     <li >
                                         <router-link :to="{ name: 'users' } " >ПОЛЬЗОВАТЕЛИ</router-link>
                                     </li>
-                                    <li >
-                                        <router-link :to="{ name: 'help' } " >ГДЕ Я?</router-link>
-                                    </li>
+
                             <li v-if="user == null" class="float-right" >
                                 <router-link to="/login">ВХОД</router-link>
                             </li>
                             <li v-else >
                                 <router-link :to="{ name: 'user', params: { user_id: user.id  }}" >Моя страница</router-link>
+                            </li>
+                            <li v-if="user != null"  >
+                                <router-link :to="{ name: 'messages' } " :style="$root.no_seen_messages > 0 ? 'color: #FF4F00' : '' ">СООБЩЕНИЯ</router-link>
                             </li>
                             <li v-if="authenticated && user" class="menu-has-children">
 
@@ -34,6 +29,7 @@
                                         role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" :style="no_seen_notices === true ? 'color: #FF4F00' : '' ">
                                         УВЕДОМЛЕНИЯ
                                     </a>
+
                                 <ul>
                                     <li v-if="notices.length > 0" v-for="notice in notices">
                                         <a href="#" @click="$router.push({ name: 'travel', params: { travel_id: notice.travel_id }})">
@@ -46,6 +42,10 @@
                                     </li>
                                 </ul>
 
+                            </li>
+
+                            <li >
+                                <router-link :to="{ name: 'help' } " >ГДЕ Я?</router-link>
                             </li>
 
 

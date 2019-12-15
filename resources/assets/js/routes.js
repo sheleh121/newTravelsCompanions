@@ -20,13 +20,6 @@ let routes = [
     },
 
     {
-        path: '/my-travels',
-        name: 'user_travels',
-        component: require('./views/users/Travels'),
-        meta: { middlewareAuth: true}
-    },
-
-    {
         path: '/travels/new',
         name: 'travel_new',
         component: require('./views/travels/New'),
