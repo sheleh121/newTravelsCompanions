@@ -10,10 +10,10 @@
                     <div class="col-lg-8 col-md-8 banner-right">
                         <ul class="nav nav-tabs" id="myTab" role="tablist">
                             <li class="nav-item">
-                                <a class="nav-link active" id="login-tab" data-toggle="tab" href="#login" role="tab" aria-controls="flight" aria-selected="true">Войти</a>
+                                <a class="nav-link active" id="login-tab" data-toggle="tab" href="#login" role="tab" aria-controls="flight" aria-selected="true">Вход</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" id="reg-tab" data-toggle="tab" href="#reg" role="tab" aria-controls="hotel" aria-selected="false">Зарегистрироваться</a>
+                                <a class="nav-link" id="reg-tab" data-toggle="tab" href="#reg" role="tab" aria-controls="hotel" aria-selected="false">Регистрация</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" id="forgot-tab" data-toggle="tab" href="#forgot" role="tab" aria-controls="hotel" aria-selected="false">Забыли пароль?</a>

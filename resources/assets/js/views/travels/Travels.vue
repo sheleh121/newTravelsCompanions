@@ -3,8 +3,8 @@
         <section  class="banner-area relative" >
             <div class="overlay overlay-bg"></div>
             <div class="container">
-                <div class="row align-items-center justify-content-between" style="height: 580px">
-                    <div class="col-lg-6 col-md-6 banner-left" style="margin-top: 100px">
+                <div class="row align-items-center justify-content-between" :style=" $root.mobile ? ('height:' + $root.innerHeight + 'px') : 'height: 580px'">
+                    <div class="col-lg-6 col-md-6 banner-left" >
                         <h6 class="text-white">Мы верим, что тот, кто ищет, тот всегда найдет</h6>
                         <h1 class="text-white">Найди компанию в приключение</h1>
                         <p class="text-white">
@@ -12,7 +12,7 @@
                         </p>
                         <router-link :to="{ name: 'travel_new' }" class="primary-btn text-uppercase">Добавить мероприятие</router-link>
                     </div>
-                    <div class="col-lg-4 col-md-6 banner-right" style="margin-top: 100px; float: right">
+                    <div class="col-lg-4 col-md-6 banner-right" style="float: right">
                         <div class="tab-content" id="myTabContent">
                             <div class="tab-pane fade show active" id="flight" role="tabpanel" aria-labelledby="flight-tab">
                                 <div class="form-wrap">
