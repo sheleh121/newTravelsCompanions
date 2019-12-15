@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>
-
+    <link rel="preconnect" href="https://travels-companions.info:6001">
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-46040882-2"></script>
     <script>
