@@ -54,22 +54,9 @@
                 </div>
             </div>
         </header><!-- #header -->
-
-        <!-- start banner Area -->
-
-        <!-- start banner Area -->
-
-
-
-
-
         <div>
             <router-view></router-view>
         </div>
-
-
-
-
 
     </div>
 </template>
@@ -168,13 +155,16 @@
                 }
             },
             noticesSeen () {
-                this.notices.forEach(function (notice) {
-                    axios.post('/api/notices/' + notice.id + '/seen')
-                        .then (() => {
-                        notice.seen = true;
-                    })
-                }, this)
-                this.no_seen_notices = false
+                if (this.no_seen_notices) {
+                    this.notices.forEach(function (notice) {
+                        axios.post('/api/notices/' + notice.id + '/seen')
+                            .then (() => {
+                                notice.seen = true;
+                            })
+                    }, this)
+                    this.no_seen_notices = false
+                }
+
             }
         }
     }
