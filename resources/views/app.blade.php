@@ -39,19 +39,6 @@
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
 
-    <script src="{{ asset('js/jquery-2.2.4.min.js') }}" defer></script>
-    <script src="{{ asset('js/jquery.magnific-popup.min.js') }}" defer></script>
-    <script src="{{ asset('js/superfish.min.js') }}" defer></script>
-    <script src="{{ asset('js/vendor/jquery-2.2.4.min.js') }}" defer></script>
-
-    <script src="{{ asset('js/jquery-ui.js') }}" defer></script>
-    <script src="{{ asset('js/easing.min.js') }}" defer></script>
-    <script src="{{ asset('js/hoverIntent.js') }}" defer></script>
-    <script src="{{ asset('js/superfish.min.js') }}" defer></script>
-    <script src="{{ asset('js/jquery.ajaxchimp.min.js') }}" defer></script>
-    <script src="{{ asset('js/jquery.magnific-popup.min.js') }}" defer></script>
-    <script src="{{ asset('js/owl.carousel.min.js') }}" defer></script>
-    <script src="{{ asset('js/main.js') }}" defer></script>
     <!-- Styles -->
     <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,400,300,500,600,700" rel="stylesheet">
     <!--
