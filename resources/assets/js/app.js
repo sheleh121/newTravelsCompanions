@@ -9,7 +9,7 @@ import router from './routes.js';
 import Api from './api.js';
 import Global from './global.js';
 import VueAuthImage from 'vue-auth-image';
-
+import VueMeta from 'vue-meta';
 
 window.Vue = require('vue');
 window.api = new Api();
@@ -23,6 +23,10 @@ window.Echo = new Echo({
 Vue.use(VueRouter);
 Vue.use(VueAuthImage);
 window.Event = new Vue;
+Vue.use(VueMeta, {
+    // optional pluginOptions
+    refreshOnceOnNavigation: true
+})
 
 
 Vue.component('location-component', require('./components/LocationComponent.vue'));

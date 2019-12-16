@@ -116,6 +116,19 @@
 
 <script>
     export default {
+        metaInfo () {
+            return {
+                title: this.travel.name,
+                meta: [
+                    { name: 'og:title', content: this.travel.name },
+                    { name: 'og:site_name', content: 'Поиск компании в путешествие' },
+                    { name: 'og:description', content: this.travel.description },
+                    { name: 'og:image', content: 'https://travels-companions.info/img/preview.png' },
+                    { name: 'description', content: this.travel.description },
+                ],
+            }
+
+        },
         props: [
             'travel_id'
         ],
@@ -128,6 +141,8 @@
                     type: Object,
                     category: Object,
                     author: Object,
+                    name: '',
+                    description: ''
                 },
                 author: [],
                 current_user_claim: [],
@@ -186,7 +201,8 @@
                     this.status_error = response.data;
                 });
             },
-        }
+        },
+
     }
 
 </script>

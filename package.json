@@ -25,6 +25,7 @@
     "laravel-echo": "^1.6.1",
     "socket.io-client": "^2.3.0",
     "vue-auth-image": "0.0.2",
+    "vue-meta": "^2.3.1",
     "vue-select": "latest"
   }
 }
