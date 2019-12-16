@@ -120,11 +120,11 @@
             return {
                 title: this.travel.name,
                 meta: [
-                    { name: 'og:title', content: this.travel.name },
-                    { name: 'og:site_name', content: 'Поиск компании в путешествие' },
-                    { name: 'og:description', content: this.travel.description },
-                    { name: 'og:image', content: 'https://travels-companions.info/img/preview.png' },
-                    { name: 'description', content: this.travel.description },
+                    { property: 'og:title', content: this.travel.name },
+                    { property: 'og:site_name', content: 'Поиск компании в путешествие' },
+                    { property: 'og:description', content: this.travel.description },
+                    { property: 'og:image', content: 'https://travels-companions.info/img/preview.png' },
+                    { property: 'description', content: this.travel.description },
                 ],
             }
 
