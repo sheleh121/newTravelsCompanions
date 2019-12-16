@@ -30,23 +30,22 @@
                 </div>
 
 
-                    <div class="form-row">
-                        <div class="col-xs-12 col-lg-3">
-                            <input type="text" class="form-control" placeholder="Фамилия" id="surname" name="surname" v-model="user.surname" >
-                        </div>
-                        <div class="col-xs-12 col-lg-3">
-                            <input type="text" class="form-control" placeholder="Имя" id="name" name="name" v-model="user.name" >
-                        </div>
-                        <div class="col-xs-12 col-lg-3">
-                            <input type="text" class="form-control" placeholder="Отчество" id="patronymic" name="patronymic" v-model="user.patronymic" >
-                        </div>
-                        <div class="col-xs-12 col-lg-3">
-                            <button @click="fio()" type="submit" class="btn btn-primary">Сохранить</button>
-                        </div>
-
+                <div class="form-row">
+                    <div class="col-xs-12 col-lg-3">
+                        <input type="text" class="form-control" placeholder="Фамилия" id="surname" name="surname" v-model="user.surname" >
+                    </div>
+                    <div class="col-xs-12 col-lg-3">
+                        <input type="text" class="form-control" placeholder="Имя" id="name" name="name" v-model="user.name" >
+                    </div>
+                    <div class="col-xs-12 col-lg-3">
+                        <input type="text" class="form-control" placeholder="Отчество" id="patronymic" name="patronymic" v-model="user.patronymic" >
+                    </div>
+                    <div class="col-xs-12 col-lg-3">
+                        <button @click="fio()" type="submit" class="genric-btn success float-right">Сохранить</button>
                     </div>
 
-
+                </div>
+                <hr/>
 
 
                 <!--        <div class="main-wrap">
@@ -62,56 +61,56 @@
                         </div>-->
 
 
-                    <label for="country" class="form-label text-md-right">Место проживания</label>
-                    <div class="form-row">
-                        <div class="col-xs-12 col-lg-3">
-                            <select class="form-control" name = "country" id = "country" @change="GetRegion"  v-model="user.country" >
-                                <option :value="0">страна</option>
-                                <option v-for="option in countries" v-bind:value="option.id">
-                                    {{ option.name }}
-                                </option>
-                            </select>
+                <label for="country" class="form-label text-md-right">Место проживания</label>
+                <div class="form-row">
+                    <div class="col-xs-12 col-lg-3">
+                        <select class="form-control" name = "country" id = "country" @change="GetRegion"  v-model="user.country" >
+                            <option :value="0">страна</option>
+                            <option v-for="option in countries" v-bind:value="option.id">
+                                {{ option.name }}
+                            </option>
+                        </select>
 
-                        </div>
-                        <div class="col-xs-12 col-lg-3">
-                            <select class="form-control" name = "region" id = "region" required @change="GetCities"  v-model="user.region" v-if="regionSeen">
-                                <option :value="0">регион</option>
-                                <option v-for="option in region" v-bind:value="option.id">
-                                    {{ option.name }}
-                                </option>
-                            </select>
-                        </div>
-                        <div class="col-xs-12 col-lg-3">
-                            <select class="form-control" name = "city" id = "city" v-model="user.city" v-if="citiesSeen">
-                                <option :value="0">город</option>
-                                <option v-for="option in cities" v-bind:value="option.id">
-                                    {{ option.name }}
-                                </option>
-                            </select>
-
-                        </div>
-                        <div class="col">
-                            <button @click="location()" type="submit" class="btn btn-primary">Сохранить</button>
-                        </div>
                     </div>
-
-
-                    <label for="password_current" class="form-label text-md-right">Сменить пароль</label>
-                    <div class="form-row">
-                        <div class="col-xs-12 col-lg-3">
-                            <input v-model="user.password_current" id="password_current" name="password_current" type="password" class="form-control" placeholder="текущий пароль" >
-                        </div>
-                        <div class="col-xs-12 col-lg-3">
-                            <input v-model="user.password" id="password" name="password" type="password" class="form-control" placeholder="новый пароль" >
-                        </div>
-                        <div class="col-xs-12 col-lg-3">
-                            <input v-model="user.password_confirm" id="password_confirm" name="password_confirmation" type="password" class="form-control" placeholder="подтверждение" >
-                        </div>
-                        <div class="col-xs-12 col-lg-3">
-                            <button @click="password()" type="submit" class="btn btn-primary">Сохранить</button>
-                        </div>
+                    <div class="col-xs-12 col-lg-3">
+                        <select class="form-control" name = "region" id = "region" required @change="GetCities"  v-model="user.region" v-if="regionSeen">
+                            <option :value="0">регион</option>
+                            <option v-for="option in region" v-bind:value="option.id">
+                                {{ option.name }}
+                            </option>
+                        </select>
                     </div>
+                    <div class="col-xs-12 col-lg-3">
+                        <select class="form-control" name = "city" id = "city" v-model="user.city" v-if="citiesSeen">
+                            <option :value="0">город</option>
+                            <option v-for="option in cities" v-bind:value="option.id">
+                                {{ option.name }}
+                            </option>
+                        </select>
 
+                    </div>
+                    <div class="col">
+                        <button @click="location()" type="submit" class="genric-btn success float-right">Сохранить</button>
+                    </div>
+                </div>
+                <hr/>
+
+                <label for="password_current" class="form-label text-md-right">Пароль</label>
+                <div class="form-row">
+                    <div class="col-xs-12 col-lg-3">
+                        <input v-model="user.password_current" id="password_current" name="password_current" type="password" class="form-control" placeholder="текущий пароль" >
+                    </div>
+                    <div class="col-xs-12 col-lg-3">
+                        <input v-model="user.password" id="password" name="password" type="password" class="form-control" placeholder="новый пароль" >
+                    </div>
+                    <div class="col-xs-12 col-lg-3">
+                        <input v-model="user.password_confirm" id="password_confirm" name="password_confirmation" type="password" class="form-control" placeholder="подтверждение" >
+                    </div>
+                    <div class="col-xs-12 col-lg-3">
+                        <button @click="password()" type="submit" class="genric-btn success float-right">Сохранить</button>
+                    </div>
+                </div>
+                <hr/>
                 <!--<div class="main-wrap">
                     <label for="image" class="form-label text-md-right">Аватар</label>
                     <div class="form-row">
@@ -123,21 +122,26 @@
                         </div>
                     </div>
                 </div>-->
-
-
-                    <div class="form-row">
-                    <label for="image" class="col-md-3 col-form-label ">Аватар</label>
+                <label for="password_current" class="form-label text-md-right">Аватар</label>
+                <div class="form-row">
                     <div class="col-md">
-                        <input @change="previewThumbnail" class="form-control-file" name="image" type="file">
+                        <div class="example-2 float-left">
+                            <input id="file" name="image" type="file" class="input-file" @change="previewThumbnail" />
+                                <label for="file" class="js-labelFile">
+                                  <span class="genric-btn primary-border">Загрузить новый</span>
+                                </label>
+                        </div>
                     </div>
                     <div class="col-md">
                         <i v-show="! image_src" class="icon fa fa-picture-o"></i>
                         <img v-show="image_src" class="img img-thumbnail" style="max-height: 200px; float: right" :src="image_src">
                     </div>
                     <div class="col-md">
-                        <button @click="avatar()" type="submit" class="btn btn-primary">Сохранить</button>
+                        <button @click="avatar()" type="submit" class="genric-btn success float-right">Сохранить</button>
                     </div>
                 </div>
+                <hr/>
+
             </div>
         </section>
 

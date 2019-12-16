@@ -10,7 +10,7 @@
                         <p class="text-white">
                             Создай мероприятие по своему вкусу или найди подходящее среди существующих.
                         </p>
-                        <router-link :to="{ name: 'travel_new' }" class="primary-btn text-uppercase">Добавить мероприятие</router-link>
+                        <router-link :to="{ name: 'travel_new' }" class="primary-btn text-uppercase">Добавить событие</router-link>
                     </div>
                     <div class="col-lg-4 col-md-6 banner-right" style="float: right">
                         <div class="tab-content" id="myTabContent">

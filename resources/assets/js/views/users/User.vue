@@ -117,7 +117,8 @@
         },
         methods: {
             logout() {
-                auth.logout()
+                auth.logout();
+                this.$router.push({name: 'login'});
             },
             GetData: function () {
                 axios.get('/api/users/' + this.user_id + '/travels/all').then((response) =>{

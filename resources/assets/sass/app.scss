@@ -47,8 +47,8 @@
 img{ max-width:100%;}
 
 .image-edit{
-  height: 154px;
-  width: 196px;
+    max-width: 24%;
+    min-width: 160px;
   float: left;
   position: relative;
   margin: 4px;
@@ -56,10 +56,7 @@ img{ max-width:100%;}
 
 .main-wrap{
   background-color: #fff;
-  padding: 15px;
-  margin-bottom: 15px;
   border-bottom: 1px solid rgba(0,0,0,.1);
-  border-radius: 2px;
 }
 
 .nav-tabs .nav-link.active, .nav-tabs .nav-item.show .nav-link {

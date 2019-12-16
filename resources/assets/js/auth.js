@@ -36,8 +36,9 @@ class Auth {
         axios.post('/api/logout').then(() => {
             this.token = null;
             this.user = null;
-            window.localStorage.clear()
+            window.localStorage.clear();
             Event.$emit('userLoggedIn');
+
         });
     }
 
