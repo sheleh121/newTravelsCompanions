@@ -14,10 +14,8 @@
                                         <router-link :to="{ name: 'users' } " >ПОЛЬЗОВАТЕЛИ</router-link>
                                     </li>
 
-                            <li v-if="user == null" class="float-right" >
-                                <router-link to="/login">ВХОД</router-link>
-                            </li>
-                            <li v-else >
+
+                            <li v-if="user !== null" >
                                 <router-link :to="{ name: 'user', params: { user_id: user.id  }}" >Моя страница</router-link>
                             </li>
                             <li v-if="user != null"  >
@@ -48,7 +46,9 @@
                                 <router-link :to="{ name: 'help' } " >ГДЕ Я?</router-link>
                             </li>
 
-
+                            <li v-if="user == null" >
+                                <router-link to="/login">ВХОД</router-link>
+                            </li>
                         </ul>
                     </nav><!-- #nav-menu-container -->
                 </div>
