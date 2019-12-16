@@ -28,10 +28,12 @@
             style="margin-bottom: 5px">
         </multiselect>
         <multiselect
+
             v-if="citiesSeen"
             :class=" errors != null ? ('city' in errors ? ' is-invalid ' : '') : '' "
             v-model="selected.city"
             :options="cities"
+            @input="$emit('selectedlocation', selected)"
             selected-label="выбрано"
             deselect-label=""
             placeholder="город"

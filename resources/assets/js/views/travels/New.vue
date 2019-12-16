@@ -154,9 +154,9 @@
                 })
             },
             selectedLocation: function (location) {
-                this.selected.country_id = (location.country === null ? 0 : location.country.id);
-                this.selected.region_id = location.region === null ? 0 : location.region.id;
-                this.selected.city_id = location.city === null ? 0 : location.city.id;
+                this.travel.country_id = (location.country === null ? 0 : location.country.id);
+                this.travel.region_id = location.region === null ? 0 : location.region.id;
+                this.travel.city_id = location.city === null ? 0 : location.city.id;
 
             },
             create: function () {
