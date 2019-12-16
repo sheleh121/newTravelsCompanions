@@ -58,9 +58,9 @@
         },
         methods: {
             selectedLocation: function (location) {
-                this.user.country = location.country;
-                this.user.region = location.region;
-                this.user.city = location.city;
+                this.selected.country_id = (location.country === null ? 0 : location.country.id);
+                this.selected.region_id = location.region === null ? 0 : location.region.id;
+                this.selected.city_id = location.city === null ? 0 : location.city.id;
             },
             nameImage(event) {
                 this.image = event.target.files[0].name;

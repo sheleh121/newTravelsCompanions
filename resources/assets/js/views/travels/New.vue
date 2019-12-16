@@ -79,8 +79,8 @@
                     </select>
                 <div class="form-row" style="margin-top: 5px">
                     <div class="col">
-                        <location-component v-if="$root.mobile" @selectedlocation = 'selectedLocation' :errors = "errors" :input_group = false  />
-                        <location-component v-else @selectedlocation = 'selectedLocation' :errors = "errors"  />
+                        <location-component v-if="$root.mobile" @selectedlocation = 'selectedLocation' :errors = "errors" :input_group = false :default_country="false"  />
+                        <location-component v-else @selectedlocation = 'selectedLocation' :errors = "errors" :default_country="false" />
                     </div>
                 </div>
 
@@ -154,9 +154,9 @@
                 })
             },
             selectedLocation: function (location) {
-                this.travel.country_id = location.country
-                this.travel.region_id = location.region
-                this.travel.city_id = location.city
+                this.selected.country_id = (location.country === null ? 0 : location.country.id);
+                this.selected.region_id = location.region === null ? 0 : location.region.id;
+                this.selected.city_id = location.city === null ? 0 : location.city.id;
 
             },
             create: function () {

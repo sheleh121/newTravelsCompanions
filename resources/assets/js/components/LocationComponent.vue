@@ -1,38 +1,49 @@
 <template>
 
-        <div :class="input_group ? 'input-group' : ''">
-            <select :class=" errors != null ? ('country' in errors ? 'form-control is-invalid' : 'form-control') : 'form-control' " name = "country" id = "country" @change="GetRegion"  v-model="selected.country" >
-                <option v-if="form" :value="0">Страна*</option>
-                <option v-else :value="0">Страна</option>
-                <option v-for="option in countries" v-bind:value="option.id">
-                    {{ option.name }}
-                </option>
+    <div :class="input_group ? 'input-group' : ''">
 
-            </select>
-
-            <select :class=" errors != null ? ('region' in errors ? 'form-control is-invalid' : 'form-control') : 'form-control' "
-                    name = "region" id = "region" required @change="GetCities"  v-model="selected.region" v-if="regionSeen">
-                <option v-if="form" :value="0">Регион*</option>
-                <option v-else :value="0">Регион</option>
-                <option v-for="option in region" v-bind:value="option.id">
-                    {{ option.name }}
-                </option>
-            </select>
-
-            <select :class=" errors != null ? ('city' in errors ? 'form-control is-invalid' : 'form-control') : 'form-control' "
-                    name = "city" id = "city" @change="$emit('selectedlocation', selected)" v-model="selected.city" v-if="citiesSeen">
-                <option v-if="form" :value="0">Город*</option>
-                <option v-else :value="0">Город</option>
-                <option v-for="option in cities" v-bind:value="option.id">
-                    {{ option.name }}
-                </option>
-            </select>
-        </div>
+        <multiselect
+            :class=" errors != null ? ('country' in errors ? ' is-invalid ' : '') : '' "
+            v-model="selected.country"
+            :options="countries"
+            select-label=""
+            deselect-label=""
+            placeholder="страна"
+            @input="GetRegion"
+            track-by="id" label="name"
+            style="margin-bottom: 5px">
+        </multiselect>
+        <multiselect
+            v-if="regionSeen"
+            :class=" errors != null ? ('region' in errors ? ' is-invalid ' : '') : '' "
+            v-model="selected.region"
+            :options="region"
+            select-label=""
+            deselect-label=""
+            placeholder="регион"
+            @input="GetCities"
+            track-by="id" label="name"
+            style="margin-bottom: 5px">
+        </multiselect>
+        <multiselect
+            v-if="citiesSeen"
+            :class=" errors != null ? ('city' in errors ? ' is-invalid ' : '') : '' "
+            v-model="selected.city"
+            :options="cities"
+            select-label=""
+            deselect-label=""
+            placeholder="город"
+            track-by="id" label="name"
+            style="margin-bottom: 5px">
+        </multiselect>
+    </div>
 
 </template>
 
 <script>
+    import Multiselect from 'vue-multiselect'
     export default {
+        components: { Multiselect },
         props: {
             old: {
                 default: null
@@ -47,6 +58,9 @@
 
             form: {
                 default: false
+            },
+            default_country: {
+                default: true
             }
 
         },
@@ -57,13 +71,14 @@
                 cities: Array,
 
                 selected: {
-                    country: 0,
-                    region: 0,
-                    city: 0,
+                    country: null,
+                    region: null,
+                    city: null,
                 },
 
                 regionSeen: false,
-                citiesSeen: false
+                citiesSeen: false,
+
             }
         },
         watch: {
@@ -83,24 +98,38 @@
                     this.input_group = false;
                 }
                 this.GetCountries();
+                this.GetRegion();
+
+                if (this.default_country)
+                    this.selected.country = {
+                        id: 3159,
+                        name: "Россия"
+                    };
 
             },
             GetCountries: function () {
                 axios.get('/api/location/countries').then((response) =>{
-                    this.countries = response.data
-                })
+                    let result = [];
+                    for(let i in response.data)
+                        result.push(response.data[i]);
+                    this.countries = result;
+                });
                 this.$emit('selectedlocation', this.selected)
 
             },
             GetRegion: function () {
                 axios.get('/api/location/region', {
                     params: {
-                        country: this.selected.country,
+                        country: this.selected.country.id,
                     }}).then((response) =>{
-                    this.region =response.data
+                    let result = [];
+                    for(let i in response.data)
+                        result.push(response.data[i]);
+                    this.region =result;
+
                     this.regionSeen = true
                     this.citiesSeen = false
-                    this.selected.region = this.selected.city = 0
+                    this.selected.region = this.selected.city = null
 
                     this.$emit('selectedlocation', this.selected)
                 })
@@ -108,9 +137,13 @@
             GetCities: function () {
                 axios.get('/api/location/cities', {
                     params: {
-                        region: this.selected.region
+                        region: this.selected.region.id
                     }}).then((response) =>{
-                    this.cities =response.data
+                    let result = [];
+                    for(let i in response.data)
+                        result.push(response.data[i]);
+                    this.cities =result;
+
                     this.citiesSeen = true
                     this.selected.city = 0
 
@@ -120,3 +153,4 @@
         }
     }
 </script>
+<style src="vue-multiselect/dist/vue-multiselect.min.css"></style>

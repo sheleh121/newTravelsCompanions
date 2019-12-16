@@ -38,7 +38,7 @@
                                         <div class="lable">ПО</div>
 
                                     <input type="date" class="form-control" v-model="selected.date_end">
-                                    <location-component @selectedlocation = 'selectedLocation' :input_group = false />
+                                    <location-component @selectedlocation = 'selectedLocation' :input_group = false  :default_country="false"/>
                                 </div>
                             </div>
                         </div>
@@ -120,9 +120,9 @@
                 this.GetTravels('/api/travels')
             },
             selectedLocation: function (location) {
-                this.selected.country_id = location.country
-                this.selected.region_id = location.region
-                this.selected.city_id = location.city
+                this.selected.country_id = (location.country === null ? 0 : location.country.id);
+                this.selected.region_id = location.region === null ? 0 : location.region.id;
+                this.selected.city_id = location.city === null ? 0 : location.city.id;
 
             },
             GetTravels: function (url) {
