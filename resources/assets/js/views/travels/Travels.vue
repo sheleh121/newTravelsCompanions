@@ -65,10 +65,6 @@
         metaInfo: {
             title: 'Найди компанию в приключение',
             meta: [
-                { property: 'og:title', content: 'Найди компанию в приключение' },
-                { property: 'og:site_name', content: 'Поиск компании в путешествие' },
-                { property: 'og:description', content: 'Создай мероприятие по своему вкусу или найди подходящее среди существующих.' },
-                { property: 'og:image',  content: 'https://travels-companions.info/img/preview.png' },
                 { property: 'description', content: 'Поиск компании в путешествие - Создай мероприятие по своему вкусу или найди подходящее среди существующих.' },
             ],
         },

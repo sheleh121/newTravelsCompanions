@@ -29,10 +29,14 @@
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
     <!-- /Yandex.Metrika counter -->
 
-
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="og:title" property="og:title" content="Найди компанию в приключение">
+    <meta name="og:site_name" property="og:site_name" content="Поиск компании в путешествие">
+    <meta name="og:description" property="og:description" content="Создай мероприятие по своему вкусу или найди подходящее среди существующих">
+    <meta name="og:image" property="og:image" content="https://travels-companions.info/img/preview.png">
+
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <title>{{ config('app.name', 'Laravel') }}</title>
