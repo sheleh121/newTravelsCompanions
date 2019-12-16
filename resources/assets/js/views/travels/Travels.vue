@@ -110,7 +110,7 @@
             getWidth: function(){
                 this.window_width = window.innerWidth;
             },
-            GetData: function () {
+                GetData: function () {
                 axios.get('/api/travels/categories').then((response) =>{
                     this.categories = response.data
                 })
